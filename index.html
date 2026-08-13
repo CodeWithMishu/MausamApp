@@ -1,81 +1,169 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MausamApp</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <nav>
-        <ul id="navbar">
-            <li>
-                <div class="logo-element">
-                    <img src="Assets/logo.svg" alt="Logo Image">
-                    <span>MausamApp</span>
-                </div>
-                </li>
-                <li>
-                    <img src="Assets/theme-light.svg" alt="light theme icon">
-                    <img src="Assets/menu-toggle.svg" alt="menu toggle icon">
-                </li>
-        </ul>
+      <ul id="navbar">
+        <li>
+          <div class="logo-element">
+            <img src="Assets/logo.svg" alt="Logo Image" />
+            <span>MausamApp</span>
+          </div>
+        </li>
+        <li>
+          <img src="Assets/theme-light.svg" alt="light theme icon" />
+          <img src="Assets/menu-toggle.svg" alt="menu toggle icon" />
+        </li>
+      </ul>
     </nav>
 
     <main>
-<section class="hero">
-<div class="hero-text"><span>Check the weather in your city</span>
-    <span>Get real-time weather updates and forecast</span>
-</div>
-<div class="location-input">
-    <div class="text-input">
-        <img src="Assets/search.svg" alt="search icon">
-        <input type="text" name="location" id="location">
-    </div>
-    <button id="search">Search</button>
-</div>
-</section>
+      <section class="hero">
+        <div class="hero-text">
+          <span>Check the weather in your city</span>
+          <span>Get real-time weather updates and forecast</span>
+        </div>
+        <div class="location-input">
+          <div class="text-input">
+            <img src="Assets/search.svg" alt="search icon" />
+            <input type="text" name="location" id="location" />
+          </div>
+          <button id="search">Search</button>
+        </div>
+      </section>
 
-<section id="current-wheather">
-    <div class="location-info">
+      <section id="current-wheather">
+        <div class="location-info">
+          <div>
+            <span id="city">Bharari</span>
+            <img src="Assets/location.svg" alt="location icon" />
+          </div>
+          <span>Friday, 8 August 2026</span>
+          <span>10:30 AM</span>
+        </div>
+        <div class="weather-status">
+          <span class="temperature">16.9°c</span>
+          <span>Moderate Rain</span>
+        </div>
+        <div class="weather-detail-1">
+          <div class="tempt">
+            <img src="Assets/weather-info/tempt.svg" alt="weather info">
+            <div>
+                <span class="w-title">Feels Like</span>
+                <span class="w-value">16.2°c</span>
+            </div>
+          </div>
+          <div class="humidity">
+            <img src="Assets/weather-info/humidity.svg" alt="humidity icon">
+            <div>
+                <span class="w-title">Humidity</span>
+                <span class="w-value">88%</span>
+            </div>
+          </div>
+          <div class="wind">
+            <img src="Assets/weather-info/wind.svg" alt="wind icon">
+            <div>
+
+                <span class="w-title">Wind</span>
+                <span class="w-value">12 Km/h</span>
+            </div>
+          </div>
+          </div>
+          <div class="weather-detail-2">
+
+              <div class="pressure">
+                <img src="Assets/weather-info/pressure.svg" alt="pressure icon">
+                <div>
+
+                    <span class="w-title">Pressure</span>
+                    <span class="w-value">1008 hPa</span>
+                </div>
+                </div>
+                <div class="visibility">
+                    <img src="Assets/weather-info/visibility.svg" alt="visibility icon">
+                    <div>
+                        <span class="w-title">Visibility</span>
+                        <span class="w-value">6.2 km</span>
+                    </div>
+                </div>
+                <div class="uvindex">
+                    <img src="Assets/weather-info/uvindex.svg" alt="uv index icon">
+                    <div>
+                        <span class="w-title">UV Index</span>
+                        <span class="w-value">2 Low</span>
+                    </div>
+                </div>
+            </div>
+      </section>
+
+      <section class="other-info">
+        <div class="forecast">
+            <span>5-Day Forecast</span>
+            <div class="weekdays">
+                <div class="days">
+                    <span>Fri</span>
+                    <span>Aug 8</span>
+                    <span>Rain</span>
+                </div>
+                <div class="days">
+                    <span>Sat</span>
+                    <span>Aug 8</span>
+                    <span>Rain</span>
+                </div>
+                <div class="days">
+                    <span>Sun</span>
+                    <span>Aug 8</span>
+                    <span>Rain</span>
+                </div>
+                <div class="days">
+                    <span>Mon</span>
+                    <span>Aug 8</span>
+                    <span>Rain</span>
+                </div>
+                <div class="days">
+                    <span>Tue</span>
+                    <span>Aug 8</span>
+                    <span>Rain</span>
+                </div>
+            </div>
+        </div>
+        <div class="highlight">
+            <span>Today's Highlight</span>
+            <div class="h-type">
+                <div class="high">
+                    <img src="" alt="">
+                    <span>Sunrise</span>
+                    <span>06:32 AM</span>
+                </div>
+                <div class="high">
+                    <img src="" alt="">
+                    <span>Sunrise</span>
+                    <span>06:32 AM</span>
+                </div>
+                <div class="high">
+                    <img src="" alt="">
+                    <span>Sunrise</span>
+                    <span>06:32 AM</span>
+                </div>
+                <div class="high">
+                    <img src="" alt="">
+                    <span>Sunrise</span>
+                    <span>06:32 AM</span>
+                </div>
+            </div>
+        </div>
+      </section>
+      <footer>
         <div>
-            <span>Bharai</span>
-            <img src="Assets/location.svg" alt="location icon">
+            <img src="" alt="">
+            Stay safe! Don't Forgot Your Umbrella ☂️
         </div>
-        <span>Friday, 8 August 2026</span>
-        <span>10:30 AM</span>
-    </div>
-    <div class="weather-status">
-        <span class="temperature">16.9°c</span>
-        <span>Moderate Rain</span>
-    </div>
-    <div class="weather-detail">
-        <div class="tempt">
-            <span>Feels Like</span>
-            <span>16.2°c</span>
-        </div>
-        <div class="humidity">
-            <span>Humidity</span>
-            <span>88%</span>
-        </div>
-        <div class="Wind">
-            <span>Wind</span>
-            <span>12 Km/h</span>
-        </div>
-        <div class="pressure">
-            <span>Pressure</span>
-            <span>1008 hPa</span>
-        </div>
-        <div class="visibility">
-            <span>Visibility</span>
-            <span>6.2 km</span>
-        </div>
-        <div class="uvindex">
-            <span>UV Index</span>
-            <span>2 Low</span>
-        </div>
-    </div>
-</section>
+      </footer>
     </main>
-</body>
+  </body>
 </html>
