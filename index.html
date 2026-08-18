@@ -3,167 +3,118 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MausamApp</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>MausamApp - Weather Forecast</title>
+    <link rel="icon" type="image/svg+xml" href="Assets/logo.svg" />
   </head>
   <body>
-    <nav>
-      <ul id="navbar">
-        <li>
-          <div class="logo-element">
-            <img src="Assets/logo.svg" alt="Logo Image" />
-            <span>MausamApp</span>
-          </div>
-        </li>
-        <li>
-          <img src="Assets/theme-light.svg" alt="light theme icon" />
-          <img src="Assets/menu-toggle.svg" alt="menu toggle icon" />
-        </li>
-      </ul>
+    <nav id="navbar">
+      <div class="logo-element">
+        <img src="Assets/logo.svg" alt="MausamApp Logo" />
+        <span>MausamApp</span>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle-btn" aria-label="Toggle theme">
+          <img id="theme-icon" src="Assets/theme-light.svg" alt="Toggle theme" />
+        </button>
+      </div>
     </nav>
 
     <main>
+      <div id="feedback-container" class="feedback-container" aria-live="polite">
+        <div id="loader" class="loader"></div>
+        <p id="error-message" class="error-message"></p>
+      </div>
+
       <section class="hero">
         <div class="hero-text">
-          <span>Check the weather in your city</span>
-          <span>Get real-time weather updates and forecast</span>
+          <span class="hero-title">Check the weather in your city</span>
+          <span class="hero-subtitle">Get real-time weather updates and forecast</span>
         </div>
         <div class="location-input">
           <div class="text-input">
             <img src="Assets/search.svg" alt="search icon" />
-            <input type="text" name="location" id="location" />
+            <input type="text" name="location" id="location" placeholder="Enter Your City..." autocomplete="off" />
           </div>
           <button id="search">Search</button>
+          <button id="current-location-btn" title="Use my current location" aria-label="Use my current location">
+            <img src="Assets/location.svg" alt="" />
+          </button>
         </div>
       </section>
 
-      <section id="current-wheather">
+      <section id="current-weather" class="current-weather hidden">
         <div class="location-info">
-          <div>
-            <span id="city">Bharari</span>
+          <div class="city-row">
             <img src="Assets/location.svg" alt="location icon" />
+            <span id="city">--</span>
           </div>
-          <span>Friday, 8 August 2026</span>
-          <span>10:30 AM</span>
+          <span id="date" class="date-text">--</span>
         </div>
         <div class="weather-status">
-          <span class="temperature">16.9°c</span>
-          <span>Moderate Rain</span>
+          <img id="weather-icon" src="" alt="Weather Icon" />
+          <span class="temperature">--°c</span>
+          <span id="weather-description">--</span>
         </div>
-        <div class="weather-detail-1">
-          <div class="tempt">
-            <img src="Assets/weather-info/tempt.svg" alt="weather info">
+        <div class="weather-detail">
+          <div class="detail-item">
+            <img src="Assets/weather-info/tempt.svg" alt="feels like icon" />
             <div>
-                <span class="w-title">Feels Like</span>
-                <span class="w-value">16.2°c</span>
+              <span class="w-title">Feels Like</span>
+              <span id="feels-like-value" class="w-value">--°c</span>
             </div>
           </div>
-          <div class="humidity">
-            <img src="Assets/weather-info/humidity.svg" alt="humidity icon">
+          <div class="detail-item">
+            <img src="Assets/weather-info/humidity.svg" alt="humidity icon" />
             <div>
-                <span class="w-title">Humidity</span>
-                <span class="w-value">88%</span>
+              <span class="w-title">Humidity</span>
+              <span id="humidity-value" class="w-value">--%</span>
             </div>
           </div>
-          <div class="wind">
-            <img src="Assets/weather-info/wind.svg" alt="wind icon">
+          <div class="detail-item">
+            <img src="Assets/weather-info/wind.svg" alt="wind icon" />
             <div>
-
-                <span class="w-title">Wind</span>
-                <span class="w-value">12 Km/h</span>
+              <span class="w-title">Wind</span>
+              <span id="wind-value" class="w-value">-- m/s</span>
             </div>
           </div>
-          </div>
-          <div class="weather-detail-2">
-
-              <div class="pressure">
-                <img src="Assets/weather-info/pressure.svg" alt="pressure icon">
-                <div>
-
-                    <span class="w-title">Pressure</span>
-                    <span class="w-value">1008 hPa</span>
-                </div>
-                </div>
-                <div class="visibility">
-                    <img src="Assets/weather-info/visibility.svg" alt="visibility icon">
-                    <div>
-                        <span class="w-title">Visibility</span>
-                        <span class="w-value">6.2 km</span>
-                    </div>
-                </div>
-                <div class="uvindex">
-                    <img src="Assets/weather-info/uvindex.svg" alt="uv index icon">
-                    <div>
-                        <span class="w-title">UV Index</span>
-                        <span class="w-value">2 Low</span>
-                    </div>
-                </div>
-            </div>
+        </div>
       </section>
 
-      <section class="other-info">
+      <section class="other-info hidden">
         <div class="forecast">
-            <span>5-Day Forecast</span>
-            <div class="weekdays">
-                <div class="days">
-                    <span>Fri</span>
-                    <span>Aug 8</span>
-                    <span>Rain</span>
-                </div>
-                <div class="days">
-                    <span>Sat</span>
-                    <span>Aug 8</span>
-                    <span>Rain</span>
-                </div>
-                <div class="days">
-                    <span>Sun</span>
-                    <span>Aug 8</span>
-                    <span>Rain</span>
-                </div>
-                <div class="days">
-                    <span>Mon</span>
-                    <span>Aug 8</span>
-                    <span>Rain</span>
-                </div>
-                <div class="days">
-                    <span>Tue</span>
-                    <span>Aug 8</span>
-                    <span>Rain</span>
-                </div>
-            </div>
+          <span class="section-title">5-Day Forecast</span>
+          <div id="forecast-weekdays" class="weekdays"></div>
         </div>
         <div class="highlight">
-            <span>Today's Highlight</span>
-            <div class="h-type">
-                <div class="high">
-                    <img src="" alt="">
-                    <span>Sunrise</span>
-                    <span>06:32 AM</span>
-                </div>
-                <div class="high">
-                    <img src="" alt="">
-                    <span>Sunrise</span>
-                    <span>06:32 AM</span>
-                </div>
-                <div class="high">
-                    <img src="" alt="">
-                    <span>Sunrise</span>
-                    <span>06:32 AM</span>
-                </div>
-                <div class="high">
-                    <img src="" alt="">
-                    <span>Sunrise</span>
-                    <span>06:32 AM</span>
-                </div>
+          <span class="section-title">Today's Highlights</span>
+          <div class="h-type">
+            <div class="high">
+              <span class="high-label">Sunrise</span>
+              <span id="sunrise-time" class="high-value">--:--</span>
             </div>
+            <div class="high">
+              <span class="high-label">Sunset</span>
+              <span id="sunset-time" class="high-value">--:--</span>
+            </div>
+            <div class="high">
+              <span class="high-label">Pressure</span>
+              <span id="pressure-value" class="high-value">---- hPa</span>
+            </div>
+            <div class="high">
+              <span class="high-label">Visibility</span>
+              <span id="visibility-value" class="high-value">--.-- km</span>
+            </div>
+          </div>
         </div>
       </section>
+
       <footer>
-        <div>
-            <img src="" alt="">
-            Stay safe! Don't Forgot Your Umbrella ☂️
+        <div class="footer-content">
+          Stay safe! Don't Forget Your Umbrella
         </div>
       </footer>
     </main>
+
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
